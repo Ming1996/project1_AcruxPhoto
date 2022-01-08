@@ -1,0 +1,131 @@
+$mobile: 500px;
+$small: 1024px;
+$medium: 1466px;
+$primary-font: "Poppins", sans-serif;
+/** Page Title CSS **/
+.hero-intro {
+    padding: 200px;
+    padding-left: 30%;
+    min-width: 300px;
+    font-family: $primary-font;
+    @media (max-width: $small) {
+      padding: 150px;
+    }
+    @media (max-width: $mobile) {
+      padding: 150px 50px;
+      padding-left: 5%;
+    }
+  }
+  @keyframes openUp {
+    from {
+      opacity: 0.3;
+      height: 0px;
+    }
+    to {
+      opacity: 1;
+      height: 150px;
+    }
+  }
+  @keyframes closeDown {
+    from {
+      opacity: 1;
+      height: 150px;
+    }
+    to {
+      opacity: 0;
+      height: 0px;
+    }
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0.4;
+      transform: translateY(30px);
+      // -webkit-transform: translateY(130px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .hero-title span {
+    line-height: 100px;
+    font-size: 70px;
+    display: block;
+    font-weight: 500;
+    animation: fadeUp 0.8s ease-in-out 0.5s;
+    font-family: $primary-font;
+    @media (max-width: $medium) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+  .hero-subtitle {
+    animation: fadeUp 0.8s ease-in-out 0.5s;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  
+.next-page-entry {
+    @extend .hero-intro;
+  }
+  .next-page-title {
+    line-height: 100px;
+    font-size: 70px;
+    display: block;
+    font-family: $primary-font;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    animation: fadeUp 0.8s ease-in-out 0.5s;
+    @media (max-width: $medium) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+  .next-page-icon {
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #000;
+    opacity: 1;
+    transform: rotate(45deg) translateY(0px);
+    -webkit-transform: rotate(45deg) translateY(0px);
+    transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+  .next-page-title:hover {
+    .next-page-icon {
+      transform: rotate(0deg);
+      transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+  }
+  .next-page-subtitle {
+    @extend .hero-subtitle;
+  }
+  

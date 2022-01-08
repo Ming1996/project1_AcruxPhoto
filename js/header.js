@@ -43,22 +43,7 @@ function menueHoverEffect(itemArray) {
   });
 }
 
-function fadeOutOnScroll(element) {
-  if (!element) {
-    return;
-  }
-  var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
-  var elementHeight = element.offsetHeight;
-  var scrollTop = document.documentElement.scrollTop;
-  var opacity = 1;
-  if (scrollTop > distanceToTop) {
-    opacity = 1 - (scrollTop - distanceToTop) / elementHeight - 0.6;
-  }
 
-  if (opacity >= 0) {
-    element.style.opacity = opacity;
-  }
-}
 // Hover effect for main menu
 var menuItem = document.getElementsByClassName("menu-item");
 menueHoverEffect(Array.from(menuItem));
@@ -81,7 +66,3 @@ document.getElementById("open-portfolio-menu").onclick = () => {
 var portfolioItem = document.getElementsByClassName("portfolio-link");
 menueHoverEffect(Array.from(portfolioItem));
 
-// Fadeout Effect for home introduction section
-var homeTitle = document.getElementsByClassName("home-intro")[0];
-
-window.addEventListener("wheel", () => fadeOutOnScroll(homeTitle));
