@@ -63,6 +63,6 @@ document.getElementById("open-portfolio-menu").onclick = () => {
 };
 
 // Hover effect for portfolio menu
-var portfolioItem = document.getElementsByClassName("portfolio-link");
-menueHoverEffect(Array.from(portfolioItem));
+// var portfolioItem = document.getElementsByClassName("portfolio-link");
+// menueHoverEffect(Array.from(portfolioItem));
 

@@ -2,8 +2,11 @@ $mobile: 500px;
 $small: 1024px;
 $medium: 1466px;
 $primary-font: "Poppins", sans-serif;
-html {
+html,
+body {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 body,
 h1,
@@ -15,9 +18,10 @@ h6 {
   font-family: $primary-font;
   margin: 0px;
 }
+
 header {
   height: 140px;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 1000;
   transition: background 0s ease-in-out 0s;
@@ -48,6 +52,7 @@ header {
 .logo-dark {
   height: 40px;
   position: relative;
+  z-index: 100;
 }
 .logo-white {
   display: none;
@@ -162,4 +167,8 @@ header {
   font-size: 20px;
   margin: 20px;
   line-height: 15px;
+  color: gray;
+}
+.portfolio-menu li a:hover {
+  color: white;
 }

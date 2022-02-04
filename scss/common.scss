@@ -10,6 +10,9 @@ footer {
   justify-content: space-between;
   padding: 30px;
   animation: fadeUp 0.5s linear 0.3s;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 footer span {
@@ -25,6 +28,11 @@ footer a {
   text-decoration: none;
   color: #000;
 }
+footer a:nth-child(1) {
+  @media (max-width: $small) {
+    display: none;
+  }
+}
 .social-media span {
   opacity: 0;
   cursor: pointer;
@@ -33,11 +41,21 @@ footer a {
 .follow {
   cursor: pointer;
 }
+.follow-button {
+  @media (max-width: $small) {
+    display: none;
+  }
+}
 .follow:hover {
   .social-media span {
     opacity: 1;
     transition: all 0.3s ease-in-out;
     transition-delay: 0.3s;
+  }
+}
+.social-media span {
+  @media (max-width: $small) {
+    opacity: 1;
   }
 }
 /** Page Title CSS **/
@@ -101,12 +119,12 @@ footer a {
     opacity: 0;
   }
 }
-.hero-title span {
+.hero-title {
   font-size: 100px;
   line-height: 100px;
   display: block;
   font-weight: 500;
-  animation: fadeUp 0.8s ease-in-out 0.5s;
+  animation: fadeUp 0.8s ease-in-out;
   font-family: $primary-font;
   @media (max-width: $medium) {
     font-size: 60px;
@@ -117,8 +135,11 @@ footer a {
     line-height: 50px;
   }
 }
+.text-white {
+  color: white;
+}
 .hero-subtitle {
-  animation: fadeUp 0.8s ease-in-out 0.5s;
+  animation: fadeUp 0.8s ease-in-out;
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
@@ -165,4 +186,171 @@ footer a {
 }
 .next-page-subtitle {
   @extend .hero-subtitle;
+}
+
+/** Full Screen intro with image background**/
+.full-screen-bg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  animation: fadeIn 0.6s linear;
+}
+.portrait {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/portrait/portrait-3-1080.jpg");
+}
+.seascape {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/seascape/sea-4-1080.jpg");
+}
+.landscape {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/landscape/landscape-3-1080.jpg");
+}
+.event {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/event/event-3-1080.jpg");
+}
+.astrophotography {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/astrophotography/astro-5-1080.jpg");
+}
+.event {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/event/event-3-1080.jpg");
+}
+.architecture {
+  @extend .full-screen-bg;
+  background-image: url("../assets/portfolio/architecture/architecture-6-1080.jpg");
+}
+
+.portfolio-title {
+  @extend .hero-intro;
+  color: white;
+}
+.portfolio-title h1 {
+  @extend .hero-title;
+}
+.portfolio-title h3 {
+  @extend .hero-subtitle;
+}
+.portfolio-intro {
+  background-color: black;
+  color: white;
+  padding: 140px 150px;
+  @media (max-width: $small) {
+    padding: 100px 30px;
+  }
+}
+.portfolio-intro h5 {
+  line-height: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  animation: fadeUp 0.4s linear;
+}
+.portfolio-intro h2 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 70px;
+  margin-bottom: 10px;
+  animation: fadeUp 0.4s linear;
+  @media (max-width: $small) {
+    font-size: 30px;
+    line-height: 50px;
+  }
+  @media (max-width: $mobile) {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
+
+.portfolio-intro span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  animation: fadeUp 0.4s linear;
+}
+
+.pure-background {
+  width: 100%;
+  height: 800px;
+ 
+  background-attachment: fixed;
+  background-position: center;
+  @media (max-width: $mobile) {
+    height: 300px;
+  }
+}
+.architecture-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/architecture/architecture-4-1080.jpg);
+}
+.astrophotography-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/astrophotography/astro-1-1080.jpg);
+}
+.landscape-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/landscape/landscape-2-1080.jpg);
+}
+.event-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/event/event-2-1080.jpg);
+}
+.portrait-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/portrait/portrait-1-1080.jpg);
+}
+.seascape-bg{
+  @extend .pure-background;
+  background-image: url(../assets/portfolio/seascape/sea-2-1080.jpg);
+}
+.detail-text {
+  padding: 120px 80px;
+  @media (max-width: $mobile) {
+    padding: 80px 20px;
+  }
+}
+.detail-text h4 {
+  font-weight: 500;
+}
+.detail-text p {
+  font-weight: 300;
+  color: #999999;
+  padding-right: 100px;
+  @media (max-width: $mobile) {
+    padding-right: 20px;
+  }
+}
+.portfolio-image {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-image img {
+  margin: 20px;
+  margin-bottom: 100px;
+  width: 800px;
+  height: 600px;
+  @media (max-width: $medium) {
+    width: 500px;
+    height: 300px;
+  }
+}
+.portfolio-image img:nth-child(1) {
+  align-self: flex-end;
+  margin: 40px;
+  @media (max-width: $mobile) {
+    align-self: center;
+  }
+}
+.portfolio-image img:nth-child(2) {
+  align-self: flex-start;
+  margin: 40px;
+  @media (max-width: $mobile) {
+    align-self: center;
+  }
 }
